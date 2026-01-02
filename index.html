@@ -1,36 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Green Network - Protect Earth</title>
+    <title>诗意人生 - 面朝大海，春暖花开</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Georgia', 'Segoe UI', serif; /* 使用衬线字体增强文学感 */
         }
 
         :root {
-            --primary: #2e7d32;
-            --secondary: #4caf50;
-            --accent: #8bc34a;
-            --light: #e8f5e9;
-            --dark: #1b5e20;
-            --text: #333333;
+            --primary: #0277bd;   /* 海洋蓝 */
+            --secondary: #4fc3f7; /* 浅蓝 */
+            --accent: #ffb300;    /* 暖阳黄 */
+            --light: #f5f7fa;
+            --dark: #1a237e;      /* 深蓝 */
+            --text: #37474f;
             --white: #ffffff;
         }
 
         body {
             background-color: var(--light);
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.8; /* 增加行高，适合阅读诗歌 */
         }
 
         header {
-            background: linear-gradient(to right, var(--primary), var(--secondary));
+            background: linear-gradient(to right, var(--dark), var(--primary));
             color: var(--white);
             padding: 1rem 0;
             position: sticky;
@@ -57,10 +57,12 @@
             gap: 10px;
             font-size: 1.8rem;
             font-weight: 700;
+            font-family: 'Segoe UI', sans-serif;
         }
 
         .logo i {
             font-size: 2rem;
+            color: var(--accent);
         }
 
         nav ul {
@@ -79,6 +81,7 @@
             transition: all 0.3s ease;
             padding: 0.5rem 0;
             position: relative;
+            font-family: 'Segoe UI', sans-serif;
         }
 
         nav ul li a:hover {
@@ -101,10 +104,11 @@
         }
 
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80');
+            /* 替换为海边背景图 */
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2073&q=80');
             background-size: cover;
             background-position: center;
-            height: 80vh;
+            height: 85vh;
             display: flex;
             align-items: center;
             text-align: center;
@@ -117,20 +121,22 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: normal;
         }
 
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            font-style: italic;
         }
 
         .btn {
             display: inline-block;
             background-color: var(--accent);
-            color: var(--white);
+            color: var(--dark);
             padding: 0.8rem 2rem;
             border-radius: 50px;
             text-decoration: none;
@@ -139,10 +145,11 @@
             border: none;
             cursor: pointer;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-family: 'Segoe UI', sans-serif;
         }
 
         .btn:hover {
-            background-color: var(--primary);
+            background-color: var(--white);
             transform: translateY(-3px);
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
         }
@@ -158,7 +165,7 @@
 
         .section-title h2 {
             font-size: 2.5rem;
-            color: var(--primary);
+            color: var(--dark);
             margin-bottom: 1rem;
             position: relative;
             display: inline-block;
@@ -170,7 +177,7 @@
             bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
+            width: 60px;
             height: 4px;
             background-color: var(--accent);
             border-radius: 2px;
@@ -180,19 +187,22 @@
             color: var(--text);
             max-width: 700px;
             margin: 0 auto;
+            margin-top: 1rem;
         }
 
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 4rem;
             align-items: center;
         }
 
         .about-img {
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            transform: rotate(-2deg); /* 微微倾斜增加艺术感 */
+            border: 8px solid var(--white);
         }
 
         .about-img img {
@@ -206,21 +216,36 @@
             transform: scale(1.05);
         }
 
+        /* 诗歌文本样式 */
+        .poem-container {
+            background-color: var(--white);
+            padding: 2rem;
+            border-left: 5px solid var(--accent);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .poem-line {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+            text-align: left;
+        }
+        
+        .poem-stanza {
+            margin-bottom: 2rem;
+        }
+
         .about-text h3 {
             font-size: 1.8rem;
             margin-bottom: 1.5rem;
-            color: var(--dark);
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
+            color: var(--primary);
         }
 
         .stats {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 5rem;
         }
 
         .stat-item {
@@ -230,6 +255,7 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease;
+            border-top: 4px solid var(--primary);
         }
 
         .stat-item:hover {
@@ -246,10 +272,13 @@
             font-size: 2.5rem;
             color: var(--dark);
             margin-bottom: 0.5rem;
+            font-family: 'Segoe UI', sans-serif;
         }
 
         .stat-item p {
             color: var(--text);
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 500;
         }
 
         .initiatives {
@@ -275,7 +304,7 @@
         }
 
         .initiative-img {
-            height: 200px;
+            height: 220px;
             overflow: hidden;
         }
 
@@ -291,7 +320,7 @@
         }
 
         .initiative-content {
-            padding: 1.5rem;
+            padding: 1.8rem;
         }
 
         .initiative-content h3 {
@@ -302,13 +331,16 @@
 
         .initiative-content p {
             margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            color: #555;
         }
 
         .cta {
-            background: linear-gradient(to right, var(--primary), var(--secondary));
+            background: linear-gradient(to right, var(--primary), var(--dark));
             color: var(--white);
             text-align: center;
             padding: 5rem 0;
+            background-attachment: fixed;
         }
 
         .cta h2 {
@@ -331,13 +363,14 @@
 
         .cta .btn:hover {
             background-color: var(--accent);
-            color: var(--white);
+            color: var(--dark);
         }
 
         footer {
-            background-color: var(--dark);
+            background-color: #263238;
             color: var(--white);
-            padding: 3rem 0 1rem;
+            padding: 4rem 0 1rem;
+            font-family: 'Segoe UI', sans-serif;
         }
 
         .footer-content {
@@ -364,10 +397,6 @@
             background-color: var(--accent);
         }
 
-        .footer-column p {
-            margin-bottom: 1rem;
-        }
-
         .footer-links {
             list-style: none;
         }
@@ -377,7 +406,7 @@
         }
 
         .footer-links li a {
-            color: var(--light);
+            color: #b0bec5;
             text-decoration: none;
             transition: all 0.3s ease;
         }
@@ -408,12 +437,14 @@
         .social-links a:hover {
             background-color: var(--accent);
             transform: translateY(-5px);
+            color: var(--dark);
         }
 
         .copyright {
             text-align: center;
             padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #90a4ae;
         }
 
         .mobile-menu {
@@ -426,15 +457,12 @@
             .about-content {
                 grid-template-columns: 1fr;
             }
-            
             .initiatives-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
             .footer-content {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
             .stats {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -444,53 +472,34 @@
             .hero h1 {
                 font-size: 2.5rem;
             }
-            
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
             nav ul {
                 display: none;
                 position: absolute;
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background-color: var(--primary);
+                background-color: var(--dark);
                 flex-direction: column;
                 padding: 1rem 0;
                 text-align: center;
                 box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
             }
-            
             nav ul.active {
                 display: flex;
             }
-            
             nav ul li {
                 margin: 0;
                 padding: 0.8rem 0;
             }
-            
             .mobile-menu {
                 display: block;
             }
-            
             .initiatives-grid {
                 grid-template-columns: 1fr;
             }
-            
             .footer-content {
                 grid-template-columns: 1fr;
             }
-            
-            .stats {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Animation for stats counter */
-        .counter {
-            transition: all 0.5s ease;
         }
     </style>
 </head>
@@ -499,19 +508,19 @@
     <header>
         <div class="container nav-container">
             <div class="logo">
-                <i class="fas fa-seedling"></i>
-                <span>Green Network</span>
+                <i class="fas fa-feather-alt"></i>
+                <span>Poetic Life</span>
             </div>
             <nav>
                 <div class="mobile-menu">
                     <i class="fas fa-bars"></i>
                 </div>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#initiatives">Initiatives</a></li>
-                    <li><a href="#get-involved">Get Involved</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#poem">读诗</a></li>
+                    <li><a href="#imagery">意象</a></li>
+                    <li><a href="#author">关于诗人</a></li>
+                    <li><a href="#contact">交流</a></li>
                 </ul>
             </nav>
         </div>
@@ -520,92 +529,111 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container hero-content">
-            <h1>Protect Our Planet, Preserve Our Future</h1>
-            <p>Join the global movement to create a sustainable world through conservation, education, and community action.</p>
-            <a href="#get-involved" class="btn">Join Our Network</a>
+            <h1>面朝大海，春暖花开</h1>
+            <p>"从明天起，做一个幸福的人"</p>
+            <a href="#poem" class="btn">开始阅读</a>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
+    <!-- Poem Display Section (Originally About) -->
+    <section id="poem">
         <div class="container">
             <div class="section-title">
-                <h2>About Green Network</h2>
-                <p>We are a global community dedicated to environmental protection and sustainable development.</p>
+                <h2>经典诵读</h2>
+                <p>愿你在尘世获得幸福，我只愿面朝大海，春暖花开。</p>
             </div>
             <div class="about-content">
                 <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Team planting trees">
+                    <!-- 替换为文艺风格图片 -->
+                    <img src="https://images.unsplash.com/photo-1471922694854-ff1b63b20054?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80" alt="Book and Sea">
                 </div>
-                <div class="about-text">
-                    <h3>Our Mission</h3>
-                    <p>Green Network is committed to creating a sustainable future by protecting natural ecosystems, promoting renewable energy, and empowering communities to take environmental action.</p>
-                    <p>Founded in 2010, we've grown from a small grassroots organization to an international network with over 50,000 members across 120 countries.</p>
-                    <p>Our approach combines scientific research, community engagement, and policy advocacy to address the most pressing environmental challenges of our time.</p>
-                    <a href="#" class="btn">Learn More</a>
+                <div class="about-text poem-container">
+                    <h3>《面朝大海，春暖花开》</h3>
+                    <div class="poem-stanza">
+                        <p class="poem-line">从明天起，做一个幸福的人</p>
+                        <p class="poem-line">喂马，劈柴，周游世界</p>
+                        <p class="poem-line">从明天起，关心粮食和蔬菜</p>
+                        <p class="poem-line">我有一所房子，面朝大海，春暖花开</p>
+                    </div>
+                    <div class="poem-stanza">
+                        <p class="poem-line">从明天起，和每一个亲人通信</p>
+                        <p class="poem-line">告诉他们我的幸福</p>
+                        <p class="poem-line">那幸福的闪电告诉我的</p>
+                        <p class="poem-line">我将告诉每一个人</p>
+                    </div>
+                    <div class="poem-stanza">
+                        <p class="poem-line">给每一条河每一座山取一个温暖的名字</p>
+                        <p class="poem-line">陌生人，我也为你祝福</p>
+                        <p class="poem-line">愿你有一个灿烂的前程</p>
+                        <p class="poem-line">愿你有情人终成眷属</p>
+                        <p class="poem-line">愿你在尘世获得幸福</p>
+                        <p class="poem-line">我只愿面朝大海，春暖花开</p>
+                    </div>
                 </div>
             </div>
+            
+            <!-- Literary Stats -->
             <div class="stats">
                 <div class="stat-item">
-                    <i class="fas fa-tree"></i>
-                    <h3 class="counter" data-target="2500000">0</h3>
-                    <p>Trees Planted</p>
+                    <i class="far fa-calendar-alt"></i>
+                    <h3 class="counter" data-target="1989">0</h3>
+                    <p>创作年份</p>
                 </div>
                 <div class="stat-item">
-                    <i class="fas fa-users"></i>
-                    <h3 class="counter" data-target="50000">0</h3>
-                    <p>Active Members</p>
+                    <i class="fas fa-paragraph"></i>
+                    <h3 class="counter" data-target="3">0</h3>
+                    <p>诗歌章节</p>
                 </div>
                 <div class="stat-item">
-                    <i class="fas fa-globe-americas"></i>
-                    <h3 class="counter" data-target="120">0</h3>
-                    <p>Countries Reached</p>
+                    <i class="fas fa-heart"></i>
+                    <h3 class="counter" data-target="999">0</h3>
+                    <p>万次感动</p>
                 </div>
                 <div class="stat-item">
-                    <i class="fas fa-recycle"></i>
-                    <h3 class="counter" data-target="1500">0</h3>
-                    <p>Cleanup Projects</p>
+                    <i class="fas fa-language"></i>
+                    <h3 class="counter" data-target="20">0</h3>
+                    <p>翻译版本</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Initiatives Section -->
-    <section class="initiatives" id="initiatives">
+    <!-- Imagery/Themes Section (Originally Initiatives) -->
+    <section class="initiatives" id="imagery">
         <div class="container">
             <div class="section-title">
-                <h2>Our Initiatives</h2>
-                <p>Discover the key programs and projects we're implementing to protect our planet.</p>
+                <h2>诗歌意象解析</h2>
+                <p>探索诗行间隐藏的纯真向往与对生命的深情祝福。</p>
             </div>
             <div class="initiatives-grid">
                 <div class="initiative-card">
                     <div class="initiative-img">
-                        <img src="https://dialogue.earth/content/uploads/2021/04/lessons-from-the-rush-to-reforest-china-dialogue-2400x1599.jpg" alt="Reforestation">
+                        <img src="https://images.unsplash.com/photo-1516934024742-b461fba47600?ixlib=rb-4.0.3&auto=format&fit=crop&w=1887&q=80" alt="Life">
                     </div>
                     <div class="initiative-content">
-                        <h3>Global Reforestation</h3>
-                        <p>Planting millions of trees worldwide to restore ecosystems, combat climate change, and protect biodiversity.</p>
-                        <a href="#" class="btn">Learn More</a>
+                        <h3>尘世生活</h3>
+                        <p>“喂马，劈柴”，这些最朴素的劳动，象征着诗人对从容、简单、踏实生活的回归与渴望。</p>
+                        <a href="#" class="btn">深入解读</a>
                     </div>
                 </div>
                 <div class="initiative-card">
                     <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Ocean Conservation">
+                        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1887&q=80" alt="Travel">
                     </div>
                     <div class="initiative-content">
-                        <h3>Ocean Conservation</h3>
-                        <p>Protecting marine ecosystems, reducing plastic pollution, and promoting sustainable fishing practices.</p>
-                        <a href="#" class="btn">Learn More</a>
+                        <h3>周游世界</h3>
+                        <p>这不仅仅是地理上的旅行，更是心灵的自由释放，一种超越物质束缚的精神漫游。</p>
+                        <a href="#" class="btn">深入解读</a>
                     </div>
                 </div>
                 <div class="initiative-card">
                     <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Renewable Energy">
+                        <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Blessing">
                     </div>
                     <div class="initiative-content">
-                        <h3>Renewable Energy</h3>
-                        <p>Promoting solar, wind, and other clean energy sources to reduce dependence on fossil fuels.</p>
-                        <a href="#" class="btn">Learn More</a>
+                        <h3>春暖花开</h3>
+                        <p>大海象征着永恒与包容，春暖花开则是生命最美好的绽放。这是诗人留给世界最温暖的背影。</p>
+                        <a href="#" class="btn">深入解读</a>
                     </div>
                 </div>
             </div>
@@ -613,76 +641,74 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta" id="get-involved">
+    <section class="cta" id="contact">
         <div class="container">
-            <h2>Join Our Global Movement</h2>
-            <p>Together, we can create a sustainable future for generations to come. Every action counts, no matter how small.</p>
-            <a href="#" class="btn">Become a Member</a>
+            <h2>加入诗歌社群</h2>
+            <p>生活不止眼前的苟且，还有诗和远方。订阅我们的周刊，每周一首好诗。</p>
+            <a href="#" class="btn">订阅诗刊</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
+    <footer id="author">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>Green Network</h3>
-                    <p>We are dedicated to protecting our planet through collaborative action, education, and sustainable solutions.</p>
+                    <h3>关于海子</h3>
+                    <p>海子（1964-1989），原名查海生。中国当代著名诗人。他的诗歌充满了对土地、麦地、村庄的深情眷恋，具有极强的冲击力和生命力。</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fas fa-book-open"></i></a>
+                        <a href="#"><i class="fas fa-pen-nib"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h3>Quick Links</h3>
+                    <h3>快速导航</h3>
                     <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#initiatives">Initiatives</a></li>
-                        <li><a href="#get-involved">Get Involved</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#home">回到首页</a></li>
+                        <li><a href="#poem">阅读全诗</a></li>
+                        <li><a href="#imagery">意象分析</a></li>
+                        <li><a href="#contact">加入我们</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Our Programs</h3>
+                    <h3>推荐诗篇</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Reforestation</a></li>
-                        <li><a href="#">Ocean Cleanup</a></li>
-                        <li><a href="#">Wildlife Protection</a></li>
-                        <li><a href="#">Climate Education</a></li>
-                        <li><a href="#">Sustainable Agriculture</a></li>
+                        <li><a href="#">《亚洲铜》</a></li>
+                        <li><a href="#">《麦地》</a></li>
+                        <li><a href="#">《以梦为马》</a></li>
+                        <li><a href="#">《日记》</a></li>
+                        <li><a href="#">《黑夜的献诗》</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Copper Creek Drive, New York</p>
-                    <p><i class="fas fa-phone"></i> +1 (312) 171-0771</p>
-                    <p><i class="fas fa-envelope"></i> support@greennetwork.org</p>
+                    <h3>联系诗社</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 北京市海淀区未名湖畔</p>
+                    <p><i class="fas fa-envelope"></i> poem@life.org</p>
+                    <p>以诗会友，静候佳音</p>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Green Network. All rights reserved.</p>
+                <p>&copy; 2026 Poetic Life. 致敬经典与梦想。</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
+        // 移动端菜单切换
         document.querySelector('.mobile-menu').addEventListener('click', function() {
             document.querySelector('nav ul').classList.toggle('active');
         });
 
-        // Counter Animation
+        // 计数器动画逻辑
         function animateCounters() {
             const counters = document.querySelectorAll('.counter');
-            const speed = 200; // The lower the slower
+            const speed = 200; 
             
             counters.forEach(counter => {
                 const target = +counter.getAttribute('data-target');
                 const count = +counter.innerText;
                 
+                // 简单的增量逻辑
                 const inc = target / speed;
                 
                 if(count < target) {
@@ -694,10 +720,10 @@
             });
         }
 
-        // Initialize counters when page loads
+        // 页面加载时启动动画
         window.addEventListener('load', animateCounters);
 
-        // Smooth scrolling for navigation links
+        // 平滑滚动
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -718,5 +744,4 @@
         });
     </script>
 </body>
-
 </html>
