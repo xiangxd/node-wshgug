@@ -1,32 +1,37 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>诗意人生 - 面朝大海，春暖花开</title>
+    <title>Poetic Soul - The Daffodils</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Georgia', 'Segoe UI', serif; /* 使用衬线字体增强文学感 */
+            font-family: 'Georgia', 'Times New Roman', serif; /* Serif font for literary feel */
         }
 
         :root {
-            --primary: #0277bd;   /* 海洋蓝 */
-            --secondary: #4fc3f7; /* 浅蓝 */
-            --accent: #ffb300;    /* 暖阳黄 */
-            --light: #f5f7fa;
-            --dark: #1a237e;      /* 深蓝 */
-            --text: #37474f;
+            --primary: #00695c;   /* Lake Green */
+            --secondary: #4db6ac; /* Soft Teal */
+            --accent: #fbc02d;    /* Daffodil Yellow */
+            --light: #f1f8e9;     /* Light Paper Color */
+            --dark: #004d40;      /* Deep Green */
+            --text: #263238;      /* Ink Color */
             --white: #ffffff;
         }
 
         body {
             background-color: var(--light);
             color: var(--text);
-            line-height: 1.8; /* 增加行高，适合阅读诗歌 */
+            line-height: 1.8;
+        }
+
+        /* Modern Sans-Serif for UI elements */
+        nav, .btn, .stat-item h3, .footer-column h3 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         header {
@@ -81,7 +86,6 @@
             transition: all 0.3s ease;
             padding: 0.5rem 0;
             position: relative;
-            font-family: 'Segoe UI', sans-serif;
         }
 
         nav ul li a:hover {
@@ -104,8 +108,8 @@
         }
 
         .hero {
-            /* 替换为海边背景图 */
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2073&q=80');
+            /* Background image of a lake district */
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80');
             background-size: cover;
             background-position: center;
             height: 85vh;
@@ -121,7 +125,7 @@
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: 3.8rem;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             font-weight: normal;
@@ -131,6 +135,7 @@
             font-size: 1.5rem;
             margin-bottom: 2.5rem;
             font-style: italic;
+            font-family: 'Georgia', serif;
         }
 
         .btn {
@@ -145,7 +150,6 @@
             border: none;
             cursor: pointer;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            font-family: 'Segoe UI', sans-serif;
         }
 
         .btn:hover {
@@ -169,6 +173,7 @@
             margin-bottom: 1rem;
             position: relative;
             display: inline-block;
+            font-family: 'Segoe UI', sans-serif;
         }
 
         .section-title h2::after {
@@ -188,6 +193,7 @@
             max-width: 700px;
             margin: 0 auto;
             margin-top: 1rem;
+            font-size: 1.1rem;
         }
 
         .about-content {
@@ -201,8 +207,8 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-            transform: rotate(-2deg); /* 微微倾斜增加艺术感 */
             border: 8px solid var(--white);
+            transform: rotate(-1deg);
         }
 
         .about-img img {
@@ -216,17 +222,28 @@
             transform: scale(1.05);
         }
 
-        /* 诗歌文本样式 */
+        /* Poem Text Styling */
         .poem-container {
             background-color: var(--white);
-            padding: 2rem;
+            padding: 2.5rem;
             border-left: 5px solid var(--accent);
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .poem-container::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 8rem;
+            color: rgba(0,0,0,0.05);
+            font-family: serif;
         }
 
         .poem-line {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
             color: var(--text);
             text-align: left;
         }
@@ -239,6 +256,7 @@
             font-size: 1.8rem;
             margin-bottom: 1.5rem;
             color: var(--primary);
+            font-family: 'Segoe UI', sans-serif;
         }
 
         .stats {
@@ -272,13 +290,14 @@
             font-size: 2.5rem;
             color: var(--dark);
             margin-bottom: 0.5rem;
-            font-family: 'Segoe UI', sans-serif;
         }
 
         .stat-item p {
-            color: var(--text);
-            font-family: 'Segoe UI', sans-serif;
+            color: #607d8b;
             font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
         }
 
         .initiatives {
@@ -327,11 +346,12 @@
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: var(--dark);
+            font-family: 'Segoe UI', sans-serif;
         }
 
         .initiative-content p {
             margin-bottom: 1.5rem;
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: #555;
         }
 
@@ -346,6 +366,7 @@
         .cta h2 {
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
+            font-family: 'Segoe UI', sans-serif;
         }
 
         .cta p {
@@ -370,7 +391,6 @@
             background-color: #263238;
             color: var(--white);
             padding: 4rem 0 1rem;
-            font-family: 'Segoe UI', sans-serif;
         }
 
         .footer-content {
@@ -445,6 +465,7 @@
             padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #90a4ae;
+            font-size: 0.9rem;
         }
 
         .mobile-menu {
@@ -509,18 +530,18 @@
         <div class="container nav-container">
             <div class="logo">
                 <i class="fas fa-feather-alt"></i>
-                <span>Poetic Life</span>
+                <span>Poetic Soul</span>
             </div>
             <nav>
                 <div class="mobile-menu">
                     <i class="fas fa-bars"></i>
                 </div>
                 <ul>
-                    <li><a href="#home">首页</a></li>
-                    <li><a href="#poem">读诗</a></li>
-                    <li><a href="#imagery">意象</a></li>
-                    <li><a href="#author">关于诗人</a></li>
-                    <li><a href="#contact">交流</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#poem">The Poem</a></li>
+                    <li><a href="#themes">Themes</a></li>
+                    <li><a href="#poet">The Poet</a></li>
+                    <li><a href="#join">Community</a></li>
                 </ul>
             </nav>
         </div>
@@ -529,45 +550,49 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container hero-content">
-            <h1>面朝大海，春暖花开</h1>
-            <p>"从明天起，做一个幸福的人"</p>
-            <a href="#poem" class="btn">开始阅读</a>
+            <h1>I Wandered Lonely as a Cloud</h1>
+            <p>"For oft, when on my couch I lie... They flash upon that inward eye"</p>
+            <a href="#poem" class="btn">Read Classic Verse</a>
         </div>
     </section>
 
-    <!-- Poem Display Section (Originally About) -->
+    <!-- Poem Display Section (About) -->
     <section id="poem">
         <div class="container">
             <div class="section-title">
-                <h2>经典诵读</h2>
-                <p>愿你在尘世获得幸福，我只愿面朝大海，春暖花开。</p>
+                <h2>The Masterpiece</h2>
+                <p>A timeless reflection on nature, memory, and the bliss of solitude.</p>
             </div>
             <div class="about-content">
                 <div class="about-img">
-                    <!-- 替换为文艺风格图片 -->
-                    <img src="https://images.unsplash.com/photo-1471922694854-ff1b63b20054?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80" alt="Book and Sea">
+                    <!-- Image of daffodils -->
+                    <img src="https://images.unsplash.com/photo-1520638023360-6def43369781?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Field of Daffodils">
                 </div>
                 <div class="about-text poem-container">
-                    <h3>《面朝大海，春暖花开》</h3>
+                    <h3>I Wandered Lonely as a Cloud</h3>
                     <div class="poem-stanza">
-                        <p class="poem-line">从明天起，做一个幸福的人</p>
-                        <p class="poem-line">喂马，劈柴，周游世界</p>
-                        <p class="poem-line">从明天起，关心粮食和蔬菜</p>
-                        <p class="poem-line">我有一所房子，面朝大海，春暖花开</p>
+                        <p class="poem-line">I wandered lonely as a cloud</p>
+                        <p class="poem-line">That floats on high o'er vales and hills,</p>
+                        <p class="poem-line">When all at once I saw a crowd,</p>
+                        <p class="poem-line">A host, of golden daffodils;</p>
+                        <p class="poem-line">Beside the lake, beneath the trees,</p>
+                        <p class="poem-line">Fluttering and dancing in the breeze.</p>
                     </div>
                     <div class="poem-stanza">
-                        <p class="poem-line">从明天起，和每一个亲人通信</p>
-                        <p class="poem-line">告诉他们我的幸福</p>
-                        <p class="poem-line">那幸福的闪电告诉我的</p>
-                        <p class="poem-line">我将告诉每一个人</p>
+                        <p class="poem-line">Continuous as the stars that shine</p>
+                        <p class="poem-line">And twinkle on the milky way,</p>
+                        <p class="poem-line">They stretched in never-ending line</p>
+                        <p class="poem-line">Along the margin of a bay:</p>
+                        <p class="poem-line">Ten thousand saw I at a glance,</p>
+                        <p class="poem-line">Tossing their heads in sprightly dance.</p>
                     </div>
                     <div class="poem-stanza">
-                        <p class="poem-line">给每一条河每一座山取一个温暖的名字</p>
-                        <p class="poem-line">陌生人，我也为你祝福</p>
-                        <p class="poem-line">愿你有一个灿烂的前程</p>
-                        <p class="poem-line">愿你有情人终成眷属</p>
-                        <p class="poem-line">愿你在尘世获得幸福</p>
-                        <p class="poem-line">我只愿面朝大海，春暖花开</p>
+                        <p class="poem-line">For oft, when on my couch I lie</p>
+                        <p class="poem-line">In vacant or in pensive mood,</p>
+                        <p class="poem-line">They flash upon that inward eye</p>
+                        <p class="poem-line">Which is the bliss of solitude;</p>
+                        <p class="poem-line">And then my heart with pleasure fills,</p>
+                        <p class="poem-line">And dances with the daffodils.</p>
                     </div>
                 </div>
             </div>
@@ -576,64 +601,64 @@
             <div class="stats">
                 <div class="stat-item">
                     <i class="far fa-calendar-alt"></i>
-                    <h3 class="counter" data-target="1989">0</h3>
-                    <p>创作年份</p>
+                    <h3 class="counter" data-target="1807">0</h3>
+                    <p>Year Published</p>
                 </div>
                 <div class="stat-item">
-                    <i class="fas fa-paragraph"></i>
-                    <h3 class="counter" data-target="3">0</h3>
-                    <p>诗歌章节</p>
+                    <i class="fas fa-scroll"></i>
+                    <h3 class="counter" data-target="24">0</h3>
+                    <p>Lines of Verse</p>
                 </div>
                 <div class="stat-item">
-                    <i class="fas fa-heart"></i>
-                    <h3 class="counter" data-target="999">0</h3>
-                    <p>万次感动</p>
+                    <i class="fas fa-seedling"></i>
+                    <h3 class="counter" data-target="10000">0</h3>
+                    <p>Daffodils Seen</p>
                 </div>
                 <div class="stat-item">
-                    <i class="fas fa-language"></i>
-                    <h3 class="counter" data-target="20">0</h3>
-                    <p>翻译版本</p>
+                    <i class="fas fa-book-reader"></i>
+                    <h3 class="counter" data-target="200">0</h3>
+                    <p>Years of Legacy</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Imagery/Themes Section (Originally Initiatives) -->
-    <section class="initiatives" id="imagery">
+    <!-- Themes Section (Initiatives) -->
+    <section class="initiatives" id="themes">
         <div class="container">
             <div class="section-title">
-                <h2>诗歌意象解析</h2>
-                <p>探索诗行间隐藏的纯真向往与对生命的深情祝福。</p>
+                <h2>Themes & Imagery</h2>
+                <p>Exploring the deeper meanings hidden within the dancing flowers.</p>
             </div>
             <div class="initiatives-grid">
                 <div class="initiative-card">
                     <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1516934024742-b461fba47600?ixlib=rb-4.0.3&auto=format&fit=crop&w=1887&q=80" alt="Life">
+                        <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Nature">
                     </div>
                     <div class="initiative-content">
-                        <h3>尘世生活</h3>
-                        <p>“喂马，劈柴”，这些最朴素的劳动，象征着诗人对从容、简单、踏实生活的回归与渴望。</p>
-                        <a href="#" class="btn">深入解读</a>
+                        <h3>Nature's Vitality</h3>
+                        <p>The poem personifies nature. The daffodils are not just plants; they are a "crowd," a "host," "dancing" with human-like joy and energy.</p>
+                        <a href="#" class="btn">Read Analysis</a>
                     </div>
                 </div>
                 <div class="initiative-card">
                     <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1887&q=80" alt="Travel">
+                        <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?ixlib=rb-4.0.3&auto=format&fit=crop&w=2094&q=80" alt="Solitude">
                     </div>
                     <div class="initiative-content">
-                        <h3>周游世界</h3>
-                        <p>这不仅仅是地理上的旅行，更是心灵的自由释放，一种超越物质束缚的精神漫游。</p>
-                        <a href="#" class="btn">深入解读</a>
+                        <h3>The Bliss of Solitude</h3>
+                        <p>Wordsworth redefines loneliness. It is not isolation, but a necessary state for the "inward eye" of imagination to function and recall beauty.</p>
+                        <a href="#" class="btn">Read Analysis</a>
                     </div>
                 </div>
                 <div class="initiative-card">
                     <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Blessing">
+                        <img src="https://images.unsplash.com/photo-1499728603963-bc0922d27b12?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Memory">
                     </div>
                     <div class="initiative-content">
-                        <h3>春暖花开</h3>
-                        <p>大海象征着永恒与包容，春暖花开则是生命最美好的绽放。这是诗人留给世界最温暖的背影。</p>
-                        <a href="#" class="btn">深入解读</a>
+                        <h3>Memory & Imagination</h3>
+                        <p>The true power of the scene lies not in the moment of seeing, but in the memory that comforts the poet long after the event has passed.</p>
+                        <a href="#" class="btn">Read Analysis</a>
                     </div>
                 </div>
             </div>
@@ -641,65 +666,65 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta" id="contact">
+    <section class="cta" id="join">
         <div class="container">
-            <h2>加入诗歌社群</h2>
-            <p>生活不止眼前的苟且，还有诗和远方。订阅我们的周刊，每周一首好诗。</p>
-            <a href="#" class="btn">订阅诗刊</a>
+            <h2>Join Our Literary Circle</h2>
+            <p>Subscribe to our weekly newsletter to receive curated poems, analysis, and classic literature delivered to your inbox.</p>
+            <a href="#" class="btn">Subscribe Now</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="author">
+    <footer id="poet">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>关于海子</h3>
-                    <p>海子（1964-1989），原名查海生。中国当代著名诗人。他的诗歌充满了对土地、麦地、村庄的深情眷恋，具有极强的冲击力和生命力。</p>
+                    <h3>About the Poet</h3>
+                    <p>William Wordsworth (1770–1850) was a major English Romantic poet who, with Samuel Taylor Coleridge, helped to launch the Romantic Age in English literature.</p>
                     <div class="social-links">
                         <a href="#"><i class="fas fa-book-open"></i></a>
                         <a href="#"><i class="fas fa-pen-nib"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h3>快速导航</h3>
+                    <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#home">回到首页</a></li>
-                        <li><a href="#poem">阅读全诗</a></li>
-                        <li><a href="#imagery">意象分析</a></li>
-                        <li><a href="#contact">加入我们</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#poem">Read Poem</a></li>
+                        <li><a href="#themes">Analysis</a></li>
+                        <li><a href="#join">Subscribe</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>推荐诗篇</h3>
+                    <h3>Recommended Works</h3>
                     <ul class="footer-links">
-                        <li><a href="#">《亚洲铜》</a></li>
-                        <li><a href="#">《麦地》</a></li>
-                        <li><a href="#">《以梦为马》</a></li>
-                        <li><a href="#">《日记》</a></li>
-                        <li><a href="#">《黑夜的献诗》</a></li>
+                        <li><a href="#">Tintern Abbey</a></li>
+                        <li><a href="#">The Prelude</a></li>
+                        <li><a href="#">Ode: Intimations</a></li>
+                        <li><a href="#">The Solitary Reaper</a></li>
+                        <li><a href="#">London, 1802</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>联系诗社</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 北京市海淀区未名湖畔</p>
-                    <p><i class="fas fa-envelope"></i> poem@life.org</p>
-                    <p>以诗会友，静候佳音</p>
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Lake District, United Kingdom</p>
+                    <p><i class="fas fa-envelope"></i> editor@poeticsoul.com</p>
+                    <p>Celebrating the art of verse.</p>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2026 Poetic Life. 致敬经典与梦想。</p>
+                <p>&copy; 2026 Poetic Soul. Dedicated to the beauty of language.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // 移动端菜单切换
+        // Mobile Menu Toggle
         document.querySelector('.mobile-menu').addEventListener('click', function() {
             document.querySelector('nav ul').classList.toggle('active');
         });
 
-        // 计数器动画逻辑
+        // Counter Animation Logic
         function animateCounters() {
             const counters = document.querySelectorAll('.counter');
             const speed = 200; 
@@ -708,7 +733,6 @@
                 const target = +counter.getAttribute('data-target');
                 const count = +counter.innerText;
                 
-                // 简单的增量逻辑
                 const inc = target / speed;
                 
                 if(count < target) {
@@ -720,10 +744,10 @@
             });
         }
 
-        // 页面加载时启动动画
+        // Initialize animation on load
         window.addEventListener('load', animateCounters);
 
-        // 平滑滚动
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
